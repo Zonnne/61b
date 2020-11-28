@@ -104,12 +104,17 @@ public class ArrayDeque<T> {
 
     private static void main(String[] args) {
         ArrayDeque<Integer> x = new ArrayDeque();
-        for (int i = 1; i < 34; i += 1) {
+        for (int i = 1; i < 10; i += 1) {
             x.addLast(i);
+            System.out.println(x.get(i - 1));
         }
         x.printDeque();
+        System.out.println(x.get(7));
+        x.removeLast();
         System.out.println(x.removeFirst());
-        System.out.println(x.removeLast());
+        x.printDeque();
+        //int size = x.size();
+        System.out.println(x.get(0));
     }
 
 }
