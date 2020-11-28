@@ -37,7 +37,7 @@ public class ArrayDeque<T> {
             for (int i = 0; i < size; i += 1) {
                 b[nextFirst + 1 + i] = a[circularResidue(i + nextFirst + 1)];
             }
-            nextLast += size;
+            nextLast = (1 + nextFirst + size) % (2 * size);
         }
         a = b;
     }
@@ -104,30 +104,32 @@ public class ArrayDeque<T> {
         return a[circularResidue(nextFirst + 1 + index)];
     }
 
-    public static void main(String[] args) {
+    private static void main(String[] args) {
         ArrayDeque<Integer> x = new ArrayDeque();
-        x.addFirst(0);
-        x.addFirst(1);
-        x.addLast(2);
+        x.addLast(0);
         x.removeFirst();
+        x.addFirst(2);
+        x.removeLast();
         x.addFirst(4);
-        x.addFirst(5);
-        x.get(3);
-        x.addFirst(7);
+        x.addLast(5);
+        x.removeFirst();
+        x.get(0);
         x.addFirst(8);
-        x.addLast(9);
-        x.addLast(10);
-        x.removeFirst();
-        x.removeLast();
-        x.removeFirst();
-        x.removeLast();
-        x.addFirst(15);
-        x.addFirst(16);
+        x.addFirst(9);
+        x.addFirst(10);
+        x.addFirst(11);
+        x.addFirst(12);
         x.get(4);
-        x.addFirst(18);
-        x.addFirst(19);
-        x.addLast(20);
-        System.out.println(x.get(5));
+        x.addLast(14);
+        x.removeLast();
+        x.addFirst(16);
+        x.addFirst(17);
+        x.get(4);
+        x.addLast(19);
+        x.get(7);
+        x.addFirst(21);
+        x.removeLast();
+        System.out.println(x.removeLast());
 
     }
 
