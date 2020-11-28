@@ -79,7 +79,7 @@ public class ArrayDeque<T> {
         T temp = a[circularResidue(nextFirst + 1)];
         nextFirst = circularResidue(nextFirst + 1);
         size -= 1;
-        if (((size * 4) < a.length) && size > 16) {
+        if (((size * 4) <= a.length) && size > 15) {
             resize();
         }
         return temp;
