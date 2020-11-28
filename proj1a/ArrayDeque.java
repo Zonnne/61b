@@ -16,10 +16,7 @@ public class ArrayDeque<T> {
         System.arraycopy(other.a, 0, a, 0, other.a.length);
     } */
     private int circularResidue(int x) {
-        while (x < 0) {
-            x += a.length;
-        }
-        return x % a.length;
+        return (x + a.length) % a.length;
     }
     private void resize() {
         T[] b;
@@ -32,9 +29,14 @@ public class ArrayDeque<T> {
             nextFirst = b.length - 1;
         }   else {
             b = (T []) new Object[a.length * 2];
-            System.arraycopy(a, circularResidue(nextFirst + 1), b, circularResidue(nextFirst + 1),
+            /*System.arraycopy(a, circularResidue(nextFirst + 1), b, circularResidue(nextFirst + 1),
                     size - circularResidue(nextFirst + 1));
             System.arraycopy(a, 0, b, size, circularResidue(nextFirst + 1));
+
+             */
+            for (int i = 0; i < size; i += 1) {
+                b[nextFirst + 1 + i] = a[circularResidue(i + nextFirst + 1)];
+            }
             nextLast += size;
         }
         a = b;
