@@ -20,7 +20,7 @@ public class ArrayDeque<T> {
     }
     private void resize() {
         T[] b;
-        if ((size * 4) < a.length) {
+        if ((size * 4) <= a.length) {
             b = (T []) new Object[a.length / 2];
             for (int i = 0; i < size; i += 1) {
                 b[i] = a[circularResidue(i + nextFirst + 1)];
@@ -91,7 +91,7 @@ public class ArrayDeque<T> {
         T temp = a[circularResidue(nextLast - 1)];
         nextLast = circularResidue(nextLast - 1);
         size -= 1;
-        if (((size * 4) < a.length) && size > 16) {
+        if (((size * 4) <= a.length) && size > 15) {
             resize();
         }
         return temp;
@@ -106,30 +106,13 @@ public class ArrayDeque<T> {
 
     private static void main(String[] args) {
         ArrayDeque<Integer> x = new ArrayDeque();
-        x.addLast(0);
-        x.removeFirst();
-        x.addFirst(2);
-        x.removeLast();
-        x.addFirst(4);
-        x.addLast(5);
-        x.removeFirst();
-        x.get(0);
-        x.addFirst(8);
-        x.addFirst(9);
-        x.addFirst(10);
-        x.addFirst(11);
-        x.addFirst(12);
-        x.get(4);
-        x.addLast(14);
-        x.removeLast();
-        x.addFirst(16);
-        x.addFirst(17);
-        x.get(4);
-        x.addLast(19);
-        x.get(7);
-        x.addFirst(21);
-        x.removeLast();
-        System.out.println(x.removeLast());
+        for (int i = 0; i < 64; i += 1) {
+            x.addLast(i);
+        }
+        for (int i = 0; i < 63; i += 1) {
+            x.removeLast();
+        }
+        System.out.println(x.size);
 
     }
 
