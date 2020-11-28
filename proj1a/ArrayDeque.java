@@ -34,7 +34,7 @@ public class ArrayDeque<T> {
             b = (T []) new Object[a.length * 2];
             System.arraycopy(a, circularResidue(nextFirst + 1), b, circularResidue(nextFirst + 1),
                     size - circularResidue(nextFirst + 1));
-            System.arraycopy(a, 0, b, size, circularResidue(nextLast - 1));
+            System.arraycopy(a, 0, b, size, circularResidue(nextFirst + 1));
             nextLast += size;
         }
         a = b;
@@ -64,7 +64,7 @@ public class ArrayDeque<T> {
     }
 
     public void printDeque() {
-        for (int i = 1; i < size + 1; i += 1) {
+        for (int i = 1; i < size + 1; i++) {
             System.out.print(a[circularResidue(nextFirst + i)] + " ");
         }
         System.out.println("\n");
@@ -104,18 +104,12 @@ public class ArrayDeque<T> {
 
     private static void main(String[] args) {
         ArrayDeque<Integer> x = new ArrayDeque();
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < 10; i += 1) {
             x.addLast(i);
-            if (x.size() == 64) {
-                System.out.println("64 reach");
-            }
+            System.out.println(x.get(i - 1));
         }
         x.printDeque();
-        for (int i = 1; i < 70; i++) {
-            x.removeFirst();
-        }
-        x.printDeque();
-        System.out.println(x.size());
+        System.out.println(x.get(7));
         x.removeLast();
         System.out.println(x.removeFirst());
         x.printDeque();
