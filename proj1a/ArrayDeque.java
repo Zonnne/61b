@@ -1,5 +1,5 @@
 public class ArrayDeque<T> {
-    private T[] a = (T []) new Object[];
+    private T[] a;
     private int size;
     int nextFirst, nextLast;
     public ArrayDeque() {
@@ -22,7 +22,7 @@ public class ArrayDeque<T> {
         return x % a.length;
     }
     public void resize() {
-        T[] b = (T []) new Object[];
+        T[] b;
         if ((size * 4) < a.length) {
             b = (T []) new Object[a.length / 2];
             for(int i = 0; i < size; i++) {
@@ -102,7 +102,7 @@ public class ArrayDeque<T> {
     }
 
     public static void main(String[] args) {
-        ArrayDeque x = new ArrayDeque();
+        ArrayDeque<Integer> x = new ArrayDeque();
         for(int i = 1; i < 100; i++) {
             x.addLast(i);
             if (x.size() == 64) {
@@ -115,7 +115,7 @@ public class ArrayDeque<T> {
         }
         x.printDeque();
         System.out.println(x.size());
-        ArrayDeque y = new ArrayDeque(x);
+        ArrayDeque<Integer> y = new ArrayDeque(x);
         x.removeLast();
         System.out.println(x.removeFirst());
         x.printDeque();

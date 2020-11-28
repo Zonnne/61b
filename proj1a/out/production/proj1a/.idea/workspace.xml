@@ -24,9 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b132f984-879d-4fa1-b066-102dedfcd35e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LinkedListDeque.java" afterDir="false" />
-    </list>
+    <list default="true" id="b132f984-879d-4fa1-b066-102dedfcd35e" name="Default Changelist" comment="1b in progress" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +47,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1kroc7YBSR9d7RzZBWSIFqMrPWy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,7 +61,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ArrayDeque">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -69,8 +69,24 @@
       <module />
       <method />
     </configuration>
+    <configuration name="ArrayDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArrayDeque" />
+      <module name="proj1a" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LinkedListDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LinkedListDeque" />
+      <module name="proj1a" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListDequeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LinkedListDequeTest" />
       <module name="proj1a" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -110,6 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayDeque" />
+        <item itemvalue="Application.LinkedListDequeTest" />
         <item itemvalue="Application.LinkedListDeque" />
       </list>
     </recent_temporary>
@@ -123,6 +141,14 @@
       <option name="presentableId" value="Default" />
       <updated>1606468147285</updated>
     </task>
+    <task id="LOCAL-00001" summary="1b in progress">
+      <created>1606494860459</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606494860459</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,10 +162,76 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1b in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="1b in progress" />
+  </component>
   <component name="WindowStateProjectService">
+    <state width="1324" height="353" key="GridCell.Tab.0.bottom" timestamp="1606494928716">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494816869" />
+    <state width="1324" height="286" key="GridCell.Tab.0.bottom/0.25.1920.1055/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494524302" />
+    <state width="1324" height="353" key="GridCell.Tab.0.bottom/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928716" />
+    <state width="1324" height="353" key="GridCell.Tab.0.center" timestamp="1606494928715">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="286" key="GridCell.Tab.0.center/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494816868" />
+    <state width="1324" height="286" key="GridCell.Tab.0.center/0.25.1920.1055/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494524300" />
+    <state width="1324" height="353" key="GridCell.Tab.0.center/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928715" />
+    <state width="1324" height="353" key="GridCell.Tab.0.left" timestamp="1606494928714">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="286" key="GridCell.Tab.0.left/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494816867" />
+    <state width="1324" height="286" key="GridCell.Tab.0.left/0.25.1920.1055/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494524299" />
+    <state width="1324" height="353" key="GridCell.Tab.0.left/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928714" />
+    <state width="1324" height="353" key="GridCell.Tab.0.right" timestamp="1606494928715">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="286" key="GridCell.Tab.0.right/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494816869" />
+    <state width="1324" height="286" key="GridCell.Tab.0.right/0.25.1920.1055/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494524301" />
+    <state width="1324" height="353" key="GridCell.Tab.0.right/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928715" />
+    <state width="1324" height="353" key="GridCell.Tab.1.bottom" timestamp="1606494928718">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="353" key="GridCell.Tab.1.bottom/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606479808514" />
+    <state width="1324" height="353" key="GridCell.Tab.1.bottom/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928718" />
+    <state width="1324" height="353" key="GridCell.Tab.1.center" timestamp="1606494928717">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="353" key="GridCell.Tab.1.center/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606479808513" />
+    <state width="1324" height="353" key="GridCell.Tab.1.center/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928717" />
+    <state width="1324" height="353" key="GridCell.Tab.1.left" timestamp="1606494928717">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="353" key="GridCell.Tab.1.left/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606479808512" />
+    <state width="1324" height="353" key="GridCell.Tab.1.left/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928717" />
+    <state width="1324" height="353" key="GridCell.Tab.1.right" timestamp="1606494928718">
+      <screen x="-79" y="1080" width="1366" height="939" />
+    </state>
+    <state width="1324" height="353" key="GridCell.Tab.1.right/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606479808513" />
+    <state width="1324" height="353" key="GridCell.Tab.1.right/0.25.1920.1055/-79.1080.1366.939@-79.1080.1366.939" timestamp="1606494928718" />
     <state x="92" y="1170" key="SettingsEditor" timestamp="1606469765538">
       <screen x="-79" y="1080" width="1366" height="1024" />
     </state>
     <state x="92" y="1170" key="SettingsEditor/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606469765538" />
+    <state x="204" y="1329" key="Vcs.Push.Dialog.v2" timestamp="1606494893179">
+      <screen x="-79" y="1080" width="1366" height="1024" />
+    </state>
+    <state x="204" y="1329" key="Vcs.Push.Dialog.v2/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606494893179" />
+    <state x="143" y="1332" width="922" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606493882212">
+      <screen x="-79" y="1080" width="1366" height="1024" />
+    </state>
+    <state x="143" y="1332" width="922" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080/-79.1080.1366.1024@-79.1080.1366.1024" timestamp="1606493882212" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
