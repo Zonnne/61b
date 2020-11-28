@@ -104,19 +104,31 @@ public class ArrayDeque<T> {
         return a[circularResidue(nextFirst + 1 + index)];
     }
 
-    private static void main(String[] args) {
+    public static void main(String[] args) {
         ArrayDeque<Integer> x = new ArrayDeque();
-        for (int i = 1; i < 10; i += 1) {
-            x.addLast(i);
-            System.out.println(x.get(i - 1));
-        }
-        x.printDeque();
-        System.out.println(x.get(7));
+        x.addFirst(0);
+        x.addFirst(1);
+        x.addLast(2);
+        x.removeFirst();
+        x.addFirst(4);
+        x.addFirst(5);
+        x.get(3);
+        x.addFirst(7);
+        x.addFirst(8);
+        x.addLast(9);
+        x.addLast(10);
+        x.removeFirst();
         x.removeLast();
-        System.out.println(x.removeFirst());
-        x.printDeque();
-        //int size = x.size();
-        System.out.println(x.get(0));
+        x.removeFirst();
+        x.removeLast();
+        x.addFirst(15);
+        x.addFirst(16);
+        x.get(4);
+        x.addFirst(18);
+        x.addFirst(19);
+        x.addLast(20);
+        System.out.println(x.get(5));
+
     }
 
 }
