@@ -15,6 +15,33 @@ public class TestPalindrome {
         assertFalse(z);
     }
     @Test
+    public void testIsPalindromeOffByOne() {
+        OffByOne cc = new OffByOne();
+        boolean x = palindrome.isPalindrome("abacb",cc);
+        assertTrue(x);
+        boolean y = palindrome.isPalindrome("asddsa",cc);
+        assertFalse(y);
+        boolean z = palindrome.isPalindrome("opedqp",cc);
+        assertTrue(z);
+    }
+    @Test
+    public void testIsPalindromeOffByN() {
+        OffByN cc = new OffByN(1);
+        boolean x = palindrome.isPalindrome("abacb",cc);
+        assertTrue(x);
+        boolean y = palindrome.isPalindrome("asddsa",cc);
+        assertFalse(y);
+        boolean z = palindrome.isPalindrome("opedqp",cc);
+        assertTrue(z);
+        OffByN cc5 = new OffByN(5);
+        boolean x5 = palindrome.isPalindrome("abagf",cc5);
+        assertTrue(x5);
+        boolean y5 = palindrome.isPalindrome("asddsa",cc5);
+        assertFalse(y5);
+        boolean z5 = palindrome.isPalindrome("glrwql",cc5);
+        assertTrue(z5);
+    }
+    @Test
     public void testWordToDeque() {
         Deque d = palindrome.wordToDeque("persiflage");
         String actual = "";

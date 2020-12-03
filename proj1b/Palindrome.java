@@ -12,8 +12,18 @@ public class Palindrome {
         }
         return (item.removeFirst() == item.removeLast() && BiRemove(item));
     }
+    private boolean BiRemove(Deque<Character> item, CharacterComparator cc) {
+        if (item.size() <= 1) {
+            return true;
+        }
+        return (cc.equalChars(item.removeFirst(), item.removeLast()) && BiRemove(item,cc));
+    }
     public boolean isPalindrome(String word) {
         Deque<Character> strings = wordToDeque(word);
         return BiRemove(strings);
+    }
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> strings = wordToDeque(word);
+        return BiRemove(strings,cc);
     }
 }
