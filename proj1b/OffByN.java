@@ -4,6 +4,6 @@ public class OffByN implements CharacterComparator {
         N = x;
     }
     public boolean equalChars(char x, char y) {
-        return ((x - y) * (x - y) == N*N );
+        return ((x - y) * (x - y) == N * N);
     }
 }

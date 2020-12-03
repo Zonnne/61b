@@ -8,11 +8,12 @@ public class TestOffByOne {
     static CharacterComparator offByOne = new OffByOne();
     @Test
     public void testEqualChars() {
-        assertTrue(offByOne.equalChars('a','b'));
-        assertFalse(offByOne.equalChars('v','v'));
-        assertTrue(offByOne.equalChars('v','u'));
-        assertTrue(offByOne.equalChars('u','v'));
+        assertTrue(offByOne.equalChars('a', 'b'));
+        assertFalse(offByOne.equalChars('v', 'v'));
+        assertTrue(offByOne.equalChars('v', 'u'));
+        assertTrue(offByOne.equalChars('u', 'v'));
     }
     // Your tests go here.
-    //Uncomment this class once you've created your CharacterComparator interface and OffByOne class. **/
+    //Uncomment this class once you've created your Character
+    // Comparator interface and OffByOne class. **/
 }
