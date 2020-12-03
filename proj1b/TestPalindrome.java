@@ -9,9 +9,9 @@ public class TestPalindrome {
     public void testIsPalindrome() {
         boolean x = palindrome.isPalindrome("nooooon");
         assertTrue(x);
-        boolean y = palindrome.isPalindrome("asddsa");
+        boolean y = palindrome.isPalindrome("zzz");
         assertTrue(y);
-        boolean z = palindrome.isPalindrome("apple");
+        boolean z = palindrome.isPalindrome("as");
         assertFalse(z);
     }
     @Test
