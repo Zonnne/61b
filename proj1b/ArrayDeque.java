@@ -1,4 +1,4 @@
-public class ArrayDeque<T> implements Deque<T>{
+public class ArrayDeque<T> implements Deque<T> {
     private T[] a;
     private int size;
     private int nextFirst, nextLast;
