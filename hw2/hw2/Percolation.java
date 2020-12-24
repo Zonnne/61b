@@ -22,24 +22,41 @@ public class Percolation {
         }
         this.N = N;
         grid = new SquareObject[N][N];
+        opened = new WeightedQuickUnionUF(N * N + 1);
+        connectedU = new WeightedQuickUnionUF(N * N + 3);
         for (int i = 0; i < N; i += 1) {
             for (int j = 0; j < N; j += 1) {
                 grid[i][j] = new SquareObject(i, j, N);
             }
         }
-        opened = new WeightedQuickUnionUF(N * N + 1);
-        connectedU = new WeightedQuickUnionUF(N * N + 1);
+//        for (int i = 0; i < N; i += 1) {
+//            connectedU.union(grid[0][i].id, N * N + 1);
+//            connectedU.union(grid[N - 1][i].id, N * N + 2);
+//        }
+
     }                // create N-by-N grid, with all sites initially blocked
     public void open(int row, int col) {
         if (row >= grid.length || col >= grid.length) {
             throw new IndexOutOfBoundsException();
         }
         grid[row][col].open = true;
-        opened.union(grid[row][col].id, N * N);
+
         if (row == 0) {
+            opened.union(grid[row][col].id, N * N);
             connectedU.union(N * N, grid[row][col].id);
             if ((row + 1) < N) {
                 connection(grid[row][col], grid[row + 1][col]);
+            }
+        } else if (row == N - 1) {
+            connectedU.union(N * N + 1, grid[row][col].id);
+            if ((row - 1) >= 0) {
+                connection(grid[row][col], grid[row - 1][col]);
+            }
+            if ((col + 1) < N) {
+                connection(grid[row][col], grid[row][col + 1]);
+            }
+            if ((col - 1) >= 0) {
+                connection(grid[row][col], grid[row][col - 1]);
             }
         } else {
             if ((row - 1 >= 0)) {
@@ -59,6 +76,7 @@ public class Percolation {
     private void connection(SquareObject center, SquareObject neighbour) {
         if (neighbour.open) {
             connectedU.union(center.id, neighbour.id);
+            opened.union(center.id, neighbour.id);
         }
     }
     public boolean isOpen(int row, int col) {
@@ -71,18 +89,14 @@ public class Percolation {
         if (row >= grid.length || col >= grid.length) {
             throw new IndexOutOfBoundsException();
         }
-        return (connectedU.connected(grid[row][col].id, N * N));
+        return (opened.connected(grid[row][col].id, N * N) &&
+                connectedU.connected(grid[row][col].id, N * N));
     } // is the site (row, col) full?
     public int numberOfOpenSites() {
         return N * N + 1 - opened.count();
     }          // number of open sites
     public boolean percolates() {
-        for (int i = 0; i < grid.length; i += 1) {
-            if (connectedU.connected(grid[grid.length - 1][i].id, N * N)) {
-                return true;
-            }
-        }
-        return false;
+        return connectedU.connected(N * N + 1, N * N);
     } // does the system percolate?
 
     public static void main(String[] args) {
