@@ -5,9 +5,9 @@ import edu.princeton.cs.introcs.StdStats;
 
 
 public class PercolationStats {
-    int[] threshould;
-    int T;
-    int N;
+    private int[] threshould;
+    private int T;
+    private int N;
     public PercolationStats(int N, int T, PercolationFactory pf) {
         if (N < 0 || T < 0) {
             throw new IllegalArgumentException();
@@ -46,8 +46,5 @@ public class PercolationStats {
     public double confidenceHigh() {
         return mean() + (1.96 * Math.sqrt(stddev() / T));
     }
-    public static void main(String[] args) {
-        PercolationStats h = new PercolationStats(40, 10000, new PercolationFactory());
-        System.out.println(h.mean());
-    }
 }
+

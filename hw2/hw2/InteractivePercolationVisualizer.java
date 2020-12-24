@@ -30,6 +30,8 @@ public class InteractivePercolationVisualizer {
         StdOut.println(N);
 
         Percolation perc = new Percolation(N);
+        boolean a = perc.isFull(5, 0);
+        System.out.println(a);
         PercolationVisualizer.draw(perc, N);
         StdDraw.show(DELAY);
         while (true) {

@@ -3,10 +3,10 @@ package hw2;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
-    WeightedQuickUnionUF opened;
-    WeightedQuickUnionUF connectedU;
-    SquareObject[][] grid;
-    int N;
+    private WeightedQuickUnionUF opened;
+    private WeightedQuickUnionUF connectedU;
+    private SquareObject[][] grid;
+    private int N;
     private class SquareObject {
         private boolean open;
         private int id;
@@ -32,9 +32,9 @@ public class Percolation {
             throw new IndexOutOfBoundsException();
         }
         grid[row][col].open = true;
-        opened.union(grid[row][col].id, 100);
+        opened.union(grid[row][col].id, N * N);
         if (row == 0) {
-            connectedU.union(100, grid[row][col].id);
+            connectedU.union(N * N, grid[row][col].id);
             connection(grid[row][col], grid[row + 1][col]);
         } else {
             if ((row - 1 >= 0)) {
@@ -66,14 +66,14 @@ public class Percolation {
         if (row >= grid.length || col >= grid.length) {
             throw new IndexOutOfBoundsException();
         }
-        return (connectedU.connected(grid[row][col].id, 100));
+        return (connectedU.connected(grid[row][col].id, N * N));
     } // is the site (row, col) full?
     public int numberOfOpenSites() {
         return N * N + 1 - opened.count();
     }          // number of open sites
     public boolean percolates() {
         for (int i = 0; i < grid.length; i += 1) {
-            if (connectedU.connected(grid[grid.length - 1][i].id, 100)) {
+            if (connectedU.connected(grid[grid.length - 1][i].id, N * N)) {
                 return true;
             }
         }
