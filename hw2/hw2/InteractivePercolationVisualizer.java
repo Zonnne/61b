@@ -18,7 +18,7 @@ public class InteractivePercolationVisualizer {
 
     public static void main(String[] args) {
         // N-by-N percolation system (read from command-line, default = 10)
-        int N = 20;
+        int N = 1;
         if (args.length == 1) {
             N = Integer.parseInt(args[0]);
         }
@@ -30,8 +30,6 @@ public class InteractivePercolationVisualizer {
         StdOut.println(N);
 
         Percolation perc = new Percolation(N);
-        boolean a = perc.isFull(5, 0);
-        System.out.println(a);
         PercolationVisualizer.draw(perc, N);
         StdDraw.show(DELAY);
         while (true) {

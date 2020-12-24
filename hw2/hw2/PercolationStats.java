@@ -5,14 +5,14 @@ import edu.princeton.cs.introcs.StdStats;
 
 
 public class PercolationStats {
-    private int[] threshould;
+    private double[] threshould;
     private int T;
     private int N;
     public PercolationStats(int N, int T, PercolationFactory pf) {
-        if (N < 0 || T < 0) {
+        if (N < 1 || T < 1) {
             throw new IllegalArgumentException();
         }
-        threshould = new int[T];
+        threshould = new double[T];
         this.T = T;
         this.N = N;
         for (int i = 0; i < T; i += 1) {
@@ -27,7 +27,7 @@ public class PercolationStats {
                 temp.open(rx, ry);
                 if (temp.percolates()) {
                     //System.out.println(j);
-                    threshould[i] = j + 1;
+                    threshould[i] = (double) (j + 1) / (double) (N * N);
                     break;
                 }
             }
@@ -35,7 +35,7 @@ public class PercolationStats {
 
     }  // perform T independent experiments on an N-by-N grid
     public double mean() {
-        return StdStats.mean(threshould) / (double) (N * N);
+        return StdStats.mean(threshould);
     }                                          // sample mean of percolation threshold
     public double stddev() {
         return StdStats.stddev(threshould);

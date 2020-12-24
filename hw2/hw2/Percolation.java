@@ -17,6 +17,9 @@ public class Percolation {
     }
 
     public Percolation(int N) {
+        if (N < 1) {
+            throw new IllegalArgumentException();
+        }
         this.N = N;
         grid = new SquareObject[N][N];
         for (int i = 0; i < N; i += 1) {
@@ -35,7 +38,9 @@ public class Percolation {
         opened.union(grid[row][col].id, N * N);
         if (row == 0) {
             connectedU.union(N * N, grid[row][col].id);
-            connection(grid[row][col], grid[row + 1][col]);
+            if ((row + 1) < N) {
+                connection(grid[row][col], grid[row + 1][col]);
+            }
         } else {
             if ((row - 1 >= 0)) {
                 connection(grid[row][col], grid[row - 1][col]);
@@ -78,6 +83,10 @@ public class Percolation {
             }
         }
         return false;
-    }             // does the system percolate?
+    } // does the system percolate?
+
+    public static void main(String[] args) {
+
+    }
 }
 
