@@ -7,6 +7,7 @@ public class Percolation {
     private WeightedQuickUnionUF connectedU;
     private SquareObject[][] grid;
     private int N;
+    private int counts;
     private class SquareObject {
         private boolean open;
         private int id;
@@ -17,6 +18,7 @@ public class Percolation {
     }
 
     public Percolation(int N) {
+        counts = 0;
         if (N < 1) {
             throw new IllegalArgumentException();
         }
@@ -39,6 +41,9 @@ public class Percolation {
         if (row >= grid.length || col >= grid.length) {
             throw new IndexOutOfBoundsException();
         }
+        if (!grid[row][col].open) {
+            counts += 1;
+        }
         grid[row][col].open = true;
 
         if (row == 0) {
@@ -47,7 +52,8 @@ public class Percolation {
             if ((row + 1) < N) {
                 connection(grid[row][col], grid[row + 1][col]);
             }
-        } else if (row == N - 1) {
+        }
+        if (row == N - 1) {
             connectedU.union(N * N + 1, grid[row][col].id);
             if ((row - 1) >= 0) {
                 connection(grid[row][col], grid[row - 1][col]);
@@ -89,11 +95,11 @@ public class Percolation {
         if (row >= grid.length || col >= grid.length) {
             throw new IndexOutOfBoundsException();
         }
-        return (opened.connected(grid[row][col].id, N * N) &&
-                connectedU.connected(grid[row][col].id, N * N));
+        return (opened.connected(grid[row][col].id, N * N)
+                && connectedU.connected(grid[row][col].id, N * N));
     } // is the site (row, col) full?
     public int numberOfOpenSites() {
-        return N * N + 1 - opened.count();
+        return counts;
     }          // number of open sites
     public boolean percolates() {
         return connectedU.connected(N * N + 1, N * N);
